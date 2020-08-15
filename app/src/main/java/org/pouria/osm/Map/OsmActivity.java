@@ -297,50 +297,57 @@ public class OsmActivity extends AppCompatActivity {
     // on click
     @OnClick(R.id.fab_startMarkerClear)
     public void fab_startMarkerClear(){
-        map.getOverlays().remove(startMarker);
-        startPoint = null;
-        map.getOverlays().remove(roadOverlay);
-        minRoad =null;
-        roadOverlay = null;
-        waypoints.remove(0);
-        waypoints1.remove(0);
-        waypoints2.remove(0);
-        waypoints3.remove(0);
-        waypoints4.remove(0);
-        waypoints5.remove(0);
-        map.invalidate();
-        card_view.setVisibility(View.GONE);
-    }
 
-    @OnClick(R.id.fab_clearAllMark)
-    public void fab_clearAllMark(){
-        map.getOverlays().remove(Marker1);
-        Point1 = null;
-        map.getOverlays().remove(Marker2);
-        Point2 = null;
-        map.getOverlays().remove(Marker3);
-        Point3 = null;
-        map.getOverlays().remove(Marker4);
-        Point4 = null;
-        map.getOverlays().remove(Marker5);
-        Point5 = null;
-        map.getOverlays().remove(roadOverlay);
-        roadOverlay = null;
-        if (waypoints1.size() > 1){
-            waypoints1.remove(1);
-            waypoints2.remove(1);
-            waypoints3.remove(1);
-            waypoints4.remove(1);
-            waypoints5.remove(1);
-        } else {
+        if (startMarker != null){
+            map.getOverlays().remove(startMarker);
+            startPoint = null;
+            map.getOverlays().remove(roadOverlay);
+            minRoad =null;
+            roadOverlay = null;
+            waypoints.remove(0);
             waypoints1.remove(0);
             waypoints2.remove(0);
             waypoints3.remove(0);
             waypoints4.remove(0);
             waypoints5.remove(0);
+            map.invalidate();
+            card_view.setVisibility(View.GONE);
         }
-        map.invalidate();
-        card_view.setVisibility(View.GONE);
+
+    }
+
+    @OnClick(R.id.fab_clearAllMark)
+    public void fab_clearAllMark(){
+        if (Point5 != null){
+            map.getOverlays().remove(Marker1);
+            Point1 = null;
+            map.getOverlays().remove(Marker2);
+            Point2 = null;
+            map.getOverlays().remove(Marker3);
+            Point3 = null;
+            map.getOverlays().remove(Marker4);
+            Point4 = null;
+            map.getOverlays().remove(Marker5);
+            Point5 = null;
+            map.getOverlays().remove(roadOverlay);
+            roadOverlay = null;
+            if (waypoints1.size() > 1){
+                waypoints1.remove(1);
+                waypoints2.remove(1);
+                waypoints3.remove(1);
+                waypoints4.remove(1);
+                waypoints5.remove(1);
+            } else {
+                waypoints1.remove(0);
+                waypoints2.remove(0);
+                waypoints3.remove(0);
+                waypoints4.remove(0);
+                waypoints5.remove(0);
+            }
+            map.invalidate();
+            card_view.setVisibility(View.GONE);
+        }
+
     }
 
 
