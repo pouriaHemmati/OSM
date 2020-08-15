@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OSM</string>
+    <string name="startMarkerClear">تغییر مبدا</string>
+    <string name="clearAllMark">پاک کردن تمامی مقصدها</string>
+</resources>
